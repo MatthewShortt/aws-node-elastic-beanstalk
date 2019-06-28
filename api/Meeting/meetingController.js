@@ -1,5 +1,10 @@
 const meetingService = require('./meetingService');
 
 exports.test = async (req, res) => {
-    return res.json(await meetingService.dbTest());
+    try {
+        return res.json(await meetingService.dbTest());
+    }
+    catch(err) {
+        return res.status(500).send(err);
+    }
 };
