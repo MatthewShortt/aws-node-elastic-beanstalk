@@ -1,3 +1,5 @@
+const AWS = require('aws-sdk');
+AWS.config.region = process.env.REGION;
 const ddb = new AWS.DynamoDB();
 const ddbTable =  process.env.STARTUP_SIGNUP_TABLE;
 
