@@ -59,7 +59,7 @@ if (cluster.isMaster) {
         ddb.putItem({
             'TableName': ddbTable,
             'Item': item,
-            'Expected': { email: { Exists: false } }        
+            'Expected': { email: { Exists: false } }
         }, function(err, data) {
             if (err) {
                 var returnStatus = 500;
@@ -72,8 +72,8 @@ if (cluster.isMaster) {
                 console.log('DDB Error: ' + err);
             } else {
                 sns.publish({
-                    'Message': 'Name: ' + req.body.name + "\r\nEmail: " + req.body.email 
-                                        + "\r\nPreviewAccess: " + req.body.previewAccess 
+                    'Message': 'Name: ' + req.body.name + "\r\nEmail: " + req.body.email
+                                        + "\r\nPreviewAccess: " + req.body.previewAccess
                                         + "\r\nTheme: " + req.body.theme,
                     'Subject': 'New user sign up!!!',
                     'TopicArn': snsTopic
@@ -84,7 +84,7 @@ if (cluster.isMaster) {
                     } else {
                         res.status(201).end();
                     }
-                });            
+                });
             }
         });
     });
@@ -93,9 +93,9 @@ if (cluster.isMaster) {
         res.json({message: 'This is a test endpoint'});
     });
 
-    app.get('/anothertest', function (req, res){
-        res.json({message: 'This is another test endpoint'});
-    });
+    // Register the routes
+    let meetingRoutes = require('./api/Meeting/meetingRoutes');
+    meetingRoutes(app);
 
     var port = process.env.PORT || 3000;
 
