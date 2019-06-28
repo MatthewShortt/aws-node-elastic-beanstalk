@@ -8,13 +8,13 @@ exports.dbTest = async () => {
         'ExclusiveStartTableName': ddbTable,
         'Limit': 10
     };
-    // return ddb;
-    await ddb.listTables(params, function (err, data) {
+
+   return await ddb.listTables(params, function (err, data) {
         if (err) {
-            return err; // an error occurred
+            return {error: err}; // an error occurred
         }
         else {
-            return {'message': 'This worked'};
+            return {message: 'This worked'};
         }
     });
 
