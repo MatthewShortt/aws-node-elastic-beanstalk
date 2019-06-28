@@ -1,4 +1,3 @@
-const AWS = require('aws-sdk');
 const ddb = new AWS.DynamoDB();
 const ddbTable =  process.env.STARTUP_SIGNUP_TABLE;
 
