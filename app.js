@@ -93,6 +93,10 @@ if (cluster.isMaster) {
         res.json({message: 'This is a test endpoint'});
     });
 
+    app.get('/anothertest', function (req, res){
+        res.json({message: 'This is another test endpoint'});
+    });
+
     var port = process.env.PORT || 3000;
 
     var server = app.listen(port, function () {
