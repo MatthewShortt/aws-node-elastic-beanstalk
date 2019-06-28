@@ -14,7 +14,7 @@ exports.dbTest = async () => {
             return err; // an error occurred
         }
         else {
-            return data;
+            return {'message': 'This worked', 'response': data};
         }
     });
 
