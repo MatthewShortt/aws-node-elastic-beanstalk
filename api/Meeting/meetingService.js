@@ -9,12 +9,12 @@ exports.dbTest = async () => {
         'Limit': 10
     };
     // return ddb;
-    ddb.listTables(params, function (err, data) {
+    await ddb.listTables(params, function (err, data) {
         if (err) {
             return err; // an error occurred
         }
         else {
-            return {'message': 'This worked', 'response': data};
+            return {'message': 'This worked'};
         }
     });
 
