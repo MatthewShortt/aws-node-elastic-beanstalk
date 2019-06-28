@@ -7,10 +7,11 @@ exports.dbTest = async () => {
         ExclusiveStartTableName: ddbTable,
         Limit: 10
     };
-    await ddb.listTables(params, function(err, data) {
-        if (err) return err; // an error occurred
-        else     return data;
-    });
+    return ddb;
+    // await ddb.listTables(params, function(err, data) {
+    //     if (err) return err; // an error occurred
+    //     else     return data;
+    // });
 
     // return await {message: 'This test endpoint is within the api folder, within the controller and now the service!'};
 };
