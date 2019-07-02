@@ -107,8 +107,7 @@ if (cluster.isMaster) {
                 res.status(returnStatus).end();
                 console.log('DDB Error: ' + err);
             } else {
-                console.log(data);
-                res.json({message: 'The data is obtained'});
+                res.json(data);
             }
         });
     });
