@@ -3,18 +3,22 @@
   "Statement": [
     {
       "Effect": "Allow",
-      "Action":   [ "dynamodb:PutItem" ],
-      "Resource": [ "*" ]
+      "Action": [
+        "dynamodb:PutItem",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": [
+        "*"
+      ]
     },
     {
       "Effect": "Allow",
-      "Action":   [ "dynamodb:DescribeTable" ],
-      "Resource": [ "*" ]
-    },
-    {
-      "Effect": "Allow",
-      "Action":   [ "sns:Publish" ],
-      "Resource": [ "*" ]
+      "Action": [
+        "sns:Publish"
+      ],
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }

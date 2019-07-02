@@ -93,6 +93,26 @@ if (cluster.isMaster) {
         res.json({message: 'This is a test endpoint'});
     });
 
+    app.get('/describe', function (req, res) {
+        ddb.describeTable({
+            'TableName': ddbTable
+        }, function(err, data) {
+            if (err) {
+                var returnStatus = 500;
+
+                if (err.code === 'ConditionalCheckFailedException') {
+                    returnStatus = 409;
+                }
+
+                res.status(returnStatus).end();
+                console.log('DDB Error: ' + err);
+            } else {
+                console.log(data);
+                res.json({message: 'The data is obtained'});
+            }
+        });
+    });
+
     // Register the routes
     let meetingRoutes = require('./api/Meeting/meetingRoutes');
     meetingRoutes(app);
