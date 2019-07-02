@@ -1,21 +1,24 @@
-const AWS = require('aws-sdk');
+var AWS = require('aws-sdk');
 AWS.config.region = process.env.REGION;
-const ddb = new AWS.DynamoDB();
-const ddbTable = process.env.STARTUP_SIGNUP_TABLE;
+var ddb = new AWS.DynamoDB();
+var ddbTable = process.env.STARTUP_SIGNUP_TABLE;
 
 exports.dbTest = async () => {
-    const params = {
-        'TableName': ddbTable
-    };
 
-   return await ddb.describeTable(params, function (err, data) {
+    return await ddb.describeTable({
+        'TableName': ddbTable
+    }, function(err, data) {
         if (err) {
-            return {error: err}; // an error occurred
-        }
-        else {
-            return {message: 'This worked'};
+            var returnStatus = 500;
+
+            if (err.code === 'ConditionalCheckFailedException') {
+                returnStatus = 409;
+            }
+
+            return err;
+        } else {
+            return data;
         }
     });
 
-    // return await {message: 'This test endpoint is within the api folder, within the controller and now the service!'};
 };
