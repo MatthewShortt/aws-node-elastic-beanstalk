@@ -5,11 +5,10 @@ const ddbTable = process.env.STARTUP_SIGNUP_TABLE;
 
 exports.dbTest = async () => {
     const params = {
-        'ExclusiveStartTableName': ddbTable,
-        'Limit': 10
+        'TableName': ddbTable
     };
 
-   return await ddb.listTables(params, function (err, data) {
+   return await ddb.describeTable(params, function (err, data) {
         if (err) {
             return {error: err}; // an error occurred
         }
