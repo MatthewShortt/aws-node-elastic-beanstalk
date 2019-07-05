@@ -1,5 +1,4 @@
 const ddb = require('../../aws.config').ddb;
-const aws = require('../../aws.config').AWS;
 
 exports.listTables = async () => {
     return await ddb.listTables({}).promise();
@@ -29,7 +28,7 @@ exports.describeTable = async (req) => {
 };
 
 exports.homepage = async () => {
-    return await aws.config.endpoint;
+    return await 'Welcome to the RESTful API using node.js, express and DynamoDB!';
 };
 
 
