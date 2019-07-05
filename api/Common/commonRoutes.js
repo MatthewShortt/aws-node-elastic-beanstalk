@@ -8,9 +8,9 @@ module.exports = function (app) {
     app.route('/listTables')
         .get(controller.listTables);
 
-    app.route('/createTable')
-        .get(controller.createTable);
-
     app.route('/describeTable')
         .get(controller.describeTable);
+
+    app.route('/createTable')
+        .get(controller.createTable);
 };

@@ -7,12 +7,20 @@
     "body-parser": "^1.19.0",
     "ejs": "latest",
     "express": "^4.17.1",
+    "lodash": "^4.17.11",
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "mocha api/**/*test.js",
+    "test-watch": "mocha api/**/*test.js -w",
+    "coverage": "nyc --reporter=html --reporter=text mocha api/**/*test.js",
+    "local-ddb": "docker run -p 8000:8000 amazon/dynamodb-local"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2"
   }
 }

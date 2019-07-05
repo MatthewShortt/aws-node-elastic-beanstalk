@@ -1,4 +1,11 @@
+# misc
 /node_modules
 .DS_Store
 *.zip
+
+# intellij
 *.idea/
+
+# istabul coverage
+.nyc_output/
+coverage/
