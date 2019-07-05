@@ -6,6 +6,6 @@
 # intellij
 *.idea/
 
-# istabul coverage
+# istanbul coverage
 .nyc_output/
 coverage/

@@ -4,6 +4,10 @@ exports.listTables = async () => {
     return await ddb.listTables({}).promise();
 };
 
+exports.describeTable = async (req) => {
+    return await ddb.describeTable({'TableName': req.body.tableName}).promise();
+};
+
 exports.createTable = async () => {
     const params = {
         TableName : "Cars",
@@ -23,9 +27,6 @@ exports.createTable = async () => {
     return await ddb.createTable(params).promise();
 };
 
-exports.describeTable = async (req) => {
-    return await ddb.describeTable({'TableName': req.body.tableName}).promise();
-};
 
 exports.homepage = async () => {
     return await 'Welcome to the RESTful API using node.js, express and DynamoDB!';
