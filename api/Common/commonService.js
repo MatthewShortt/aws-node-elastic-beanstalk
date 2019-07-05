@@ -28,7 +28,7 @@ exports.describeTable = async (req) => {
 };
 
 exports.homepage = async () => {
-    return await 'Welcome to the RESTful API using node.js, express and DynamoDB!';
+    return await process.env;
 };
 
 

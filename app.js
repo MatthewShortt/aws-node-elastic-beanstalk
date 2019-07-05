@@ -30,9 +30,9 @@ if (cluster.isMaster) {
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
 
-// Register the routes
-    let meetingRoutes = require('./api/Common/commonRoutes');
-    meetingRoutes(app);
+    // Register the routes
+    let commonRoutes = require('./api/Common/commonRoutes');
+    commonRoutes(app);
 
     const port = process.env.PORT || 3000;
 
