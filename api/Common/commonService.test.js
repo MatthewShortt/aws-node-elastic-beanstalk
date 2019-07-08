@@ -92,7 +92,7 @@ describe('Common Service', () => {
     describe('homepage', () => {
 
         it('should return the welcome message', async () => {
-            const expectedResult = 'Welcome to the RESTful API using node.js, express and DynamoDB!';
+            const expectedResult = 'Welcome to the RESTful API using node.js, express and DynamoDB.';
 
             const actualResponse = await fixture.homepage();
 
