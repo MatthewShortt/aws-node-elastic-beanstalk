@@ -1,2 +1,3 @@
+[![Build Status](https://travis-ci.com/MatthewShortt/aws-node-elastic-beanstalk.svg?branch=master)](https://travis-ci.com/MatthewShortt/aws-node-elastic-beanstalk)
 # AWS Elastic Beanstalk Express Sample API
 This sample application uses the [Express](https://expressjs.com/) framework to build a simple, scalable RESTful API that is deployed to [AWS Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/). The application stores data in [Amazon DynamoDB](http://aws.amazon.com/dynamodb/) and publishes notifications to the [Amazon Simple Notification Service (SNS)](http://aws.amazon.com/sns/).
