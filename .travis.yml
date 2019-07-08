@@ -15,6 +15,6 @@ deploy:
   region: us-east-2
   app: Tutorials
   env: Tutorials-env
-  bucket_name: elasticbeanstalk-us-east-2-191141737429.s3.amazonaws.com
+  bucket_name: travis-deployment-resevoir
   on:
     branch: master
