@@ -13,4 +13,7 @@ module.exports = function (app) {
 
     app.route('/createTable')
         .get(controller.createTable);
+
+    app.route('/test')
+        .get(controller.test);
 };

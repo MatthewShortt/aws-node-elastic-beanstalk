@@ -16,3 +16,7 @@ exports.createTable = async (req, res) => {
 exports.homepage = async (req, res) => {
     return await serviceComposer.execute(commonService.homepage, req, res);
 };
+
+exports.test = async (req, res) => {
+    return await serviceComposer.execute(commonService.test, req, res);
+};
