@@ -1,4 +1,4 @@
-const ddb = require('../../aws.config').ddb;
+const ddb = require('../../config/aws.config').ddb;
 
 exports.listTables = async () => {
     return await ddb.listTables({}).promise();

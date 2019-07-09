@@ -1,6 +1,6 @@
 const {stub, assert} = require('sinon');
 const _ = require('lodash');
-const ddb = require('../../aws.config').ddb;
+const ddb = require('../../config/aws.config').ddb;
 const fixture = require('./commonService');
 
 describe('Common Service', () => {

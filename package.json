@@ -14,7 +14,7 @@
     "start": "nodemon app.js",
     "test": "mocha api/**/*test.js api/*test.js",
     "test-watch": "mocha api/**/*test.js api/*test.js -w",
-    "coverage": "nyc --reporter=html --reporter=text --check-coverage mocha api/**/*test.js api/*test.js",
+    "coverage": "nyc --reporter=html --reporter=text --check-coverage -x config/** mocha api/**/*test.js api/*test.js",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "localstack": "localstack start",
     "ddb": "docker run -p 8000:8000 amazon/dynamodb-local"
