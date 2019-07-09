@@ -31,4 +31,4 @@ Launches the tests in coverage mode using [Instanbul](https://istanbul.js.org/).
 
 #### `npm run localstack`
 
-Runs LocalStack. Spins up the mocked AWS services (eg. DynamoDB can be found at [http://localhost:4569](http://localhost:4569))
+Runs LocalStack. Spins up the mocked AWS services (eg. S3 can be found at [http://localhost:4572](http://localhost:4572))
