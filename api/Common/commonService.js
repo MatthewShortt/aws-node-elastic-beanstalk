@@ -1,5 +1,7 @@
 const ddb = require('../../config/aws.config').ddb;
 const aws = require('../../config/aws.config').AWS;
+const sns = require('../../config/aws.config').sns;
+const sqs = require('../../config/aws.config').sqs;
 
 exports.listTables = async () => {
     return await ddb.listTables({}).promise();
@@ -33,5 +35,5 @@ exports.homepage = async () => {
 };
 
 exports.test = async() => {
-    return await aws;
+    return await ddb.config;
 };
