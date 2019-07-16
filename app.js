@@ -1,5 +1,6 @@
 // Include the cluster module
 let cluster = require('cluster');
+let execSync = require('child_process').execSync;
 
 // Code to run if we're in the master process
 if (cluster.isMaster) {
@@ -34,9 +35,12 @@ if (cluster.isMaster) {
     let commonRoutes = require('./api/Common/commonRoutes');
     commonRoutes(app);
 
+    const gitCommit ="git rev-parse HEAD";
+    const commit = execSync(gitCommit).toString().trim();
+
     const port = process.env.PORT || 3000;
 
     const server = app.listen(port, function () {
-        console.log('Server running at http://127.0.0.1:' + port + '/');
+        console.log('Server running at http://127.0.0.1:' + port + '/' + '. Currently on revision: ' + commit);
     });
 }
